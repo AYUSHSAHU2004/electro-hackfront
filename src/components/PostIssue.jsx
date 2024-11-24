@@ -161,10 +161,10 @@ const PostIssue = () => {
                 >
                   {formData.previewUrl ? (
                     <img
-                      src={formData.previewUrl}
-                      alt="Image Preview"
-                      className="h-32 w-32 object-cover"
-                    />
+  src={formData.previewUrl}
+  alt=""
+  className="h-32 w-32 object-cover"
+/>
                   ) : (
                     <>
                       <svg

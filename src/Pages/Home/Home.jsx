@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Modal from '../../components/Modal'; // Adjust the import path as necessary
 
 const Home = () => {
-  const navigate = useNavigate();
-
   const [data, setData] = useState(null);
   const [otherData, setOtherData] = useState(null);
   const [activeTab, setActiveTab] = useState('updates');

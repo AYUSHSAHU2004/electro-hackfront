@@ -14,13 +14,9 @@ const SignUp = ({ onLogin }) => {
     location: "",
     department: "",
   });
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
+
     
   
     try {
@@ -41,7 +37,6 @@ const SignUp = ({ onLogin }) => {
         );
   
         if (response.status === 201) {
-          setSuccess("Successfully registered as Public!");
           alert("Successfully registered as Public!");
           setPublicState({ phoneNumber: "" }); // Resetting fields after successful registration
           navigate("/"); // Use the navigate function for redirection
@@ -60,7 +55,6 @@ const SignUp = ({ onLogin }) => {
         );
   
         if (response.status === 201) {
-          setSuccess("Successfully registered as Authority!");
           alert("Successfully registered as Authority!");
           setAuthorityState({ phoneNumber: "", location: "", department: "" }); // Resetting fields after successful registration
           navigate('/authority/home');
@@ -69,7 +63,6 @@ const SignUp = ({ onLogin }) => {
       }
     } catch (error) {
       console.error("Error during user registration:", error);
-      setError("Registration failed. Please try again.");
     }
   };
 
@@ -217,19 +210,19 @@ const SignUp = ({ onLogin }) => {
                 </button>
                 <p className="mt-6 text-xs text-gray-600 text-center">
                   I agree to abide by templatana's
-                  <a
-                    href="#"
+                  <button
+                    
                     className="border-b border-gray-500 border-dotted"
                   >
                     Terms of Service
-                  </a>
+                  </button>
                   and its
-                  <a
-                    href="#"
+                  <button
+                    
                     className="border-b border-gray-500 border-dotted"
                   >
                     Privacy Policy
-                  </a>
+                  </button>
                 </p>
               </div>
             </div>

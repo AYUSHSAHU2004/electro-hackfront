@@ -11,8 +11,7 @@ const AuthHome = () => {
   const [loading, setLoading] = useState(true);
   const [loc, setLoc] = useState(null);
   const [dep, setDep] = useState(null);
-  const [error, setError] = useState(null);
-
+  
   const handleUpdate = (index) => {
     navigate(`/authority/dashboard/UpdateAuthority/${index}`);
   };
@@ -27,11 +26,9 @@ const AuthHome = () => {
         if (response.data.Location && response.data.Department) {
           setLoc(response.data.Location);
           setDep(response.data.Department);
-        } else {
-          setError("Location or Department missing");
-        }
+        } 
       } catch (err) {
-        setError("Error fetching user details: " + err.message);
+        console.log("Error fetching user details: " + err.message);
       }
     };
 
@@ -50,7 +47,7 @@ const AuthHome = () => {
         );
         setData(response.data.data || []);
       } catch (err) {
-        setError("Error fetching pending issues: " + err.message);
+        console.log("Error fetching pending issues: " + err.message);
       } finally {
         setLoading(false);
       }
