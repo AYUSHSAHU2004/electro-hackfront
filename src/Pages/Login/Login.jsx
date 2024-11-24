@@ -131,9 +131,9 @@ const Login = ({ onLogin }) => {
                         </button>
                         <p className="mt-6 text-xs text-gray-600 text-center">
                             I agree to abide by templatana's
-                            <a href="#" className="border-b border-gray-500 border-dotted">Terms of Service</a>
+                            <button  className="border-b border-gray-500 border-dotted">Terms of Service</button>
                             and its
-                            <a href="#" className="border-b border-gray-500 border-dotted">Privacy Policy</a>
+                            <button  className="border-b border-gray-500 border-dotted">Privacy Policy</button>
                         </p>
                     </div>
                 </div>
